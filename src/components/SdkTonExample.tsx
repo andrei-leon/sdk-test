@@ -12,8 +12,9 @@ function SDKTonExample() {
   const getScore = async () => {
     setIsScoring(true);
     const { mintData } = await getScoreData({ address });
+    const isHolder = await isScoreHolder({ address });
 
-    console.log(mintData);
+    console.log(mintData, isHolder);
     setMintingData(mintData);
     setIsScoring(false);
   };
